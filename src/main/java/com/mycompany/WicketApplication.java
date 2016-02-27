@@ -2,6 +2,8 @@ package com.mycompany;
 
 import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.settings.RequestCycleSettings;
+import plaintext.PlainTextReference;
 
 /**
  * Application object for your web application.
@@ -29,6 +31,11 @@ public class WicketApplication extends WebApplication
 
         // add your configuration here
         mountPage("products", ProductsPage.class);
+        mountResource("/plaintext", new PlainTextReference());
+
+        // disable response caching
+        RequestCycleSettings requestCycleSettings = getRequestCycleSettings();
+        requestCycleSettings.setBufferResponse(false);
     }
 
     @Override
