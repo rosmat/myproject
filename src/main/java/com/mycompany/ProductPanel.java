@@ -13,8 +13,10 @@ public class ProductPanel extends Panel {
         super(id);
 
         WebComponent img = new WebComponent("image");
-        String imgUrl = product.getName() + ".jpg";
+        String imgUrl = product.getName() + ".png";
         img.add(AttributeModifier.replace("src", imgUrl));
+        img.add(AttributeModifier.replace("height", 20));
+        img.add(AttributeModifier.replace("width", 20));
         add(img);
 
         Label nameLabel = new Label("productname", product.getName());
