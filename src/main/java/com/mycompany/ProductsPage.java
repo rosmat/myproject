@@ -36,6 +36,6 @@ public class ProductsPage extends TemplatePage {
 
     @Override
     public String getPageName() {
-        return "Products listing";
+        return "Product listing";
     }
 }
